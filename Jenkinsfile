@@ -2,8 +2,8 @@ Pipeline{
      Agent any
         Stages{
           Stage(‘Build’){
-        Steps{
-          sh ‘make’
+          Steps{
+            sh ‘make’
           }
           }
        Stage(‘Test’){
