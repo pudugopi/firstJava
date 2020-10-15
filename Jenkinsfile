@@ -1,9 +1,9 @@
 pipeline{
      agent any
         stages{
-          stage(‘Build’){
+          stage(‘pull code from github’){
           steps{
-            sh ‘make’
+            git credentialsId: 'github', url: 'https://github.com/pudugopi/firstJava.git'
           }
          }
        stage(‘Test’){
