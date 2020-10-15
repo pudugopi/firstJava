@@ -1,21 +1,20 @@
 Pipeline{
      Agent any
-        Stages{
-          Stage(‘Build’){
-          Steps{
+        stages{
+          stage(‘Build’){
+          steps{
             sh ‘make’
           }
-          }
-       Stage(‘Test’){
-        Steps{
+         }
+       stage(‘Test’){
+         steps{
           sh ‘make check’
-          Junit ‘reports/**/*.xml’
-          }
-        }
-       Stage(‘Deploy’){
-          Steps{
+         }
+       }
+       stage(‘Deploy’){
+          steps{
             sh ‘make publish’
             }
-         }
+        }
      }
 }
