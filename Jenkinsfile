@@ -1,20 +1,25 @@
 pipeline{
-     agent any
-        stages{
-          stage(‘pull code from github’){
-          steps{
-            git credentialsId: 'github', url: 'https://github.com/pudugopi/firstJava.git'
-          }
-         }
-       stage(‘Test’){
-         steps{
-          sh ‘make check’
-         }
-       }
-       stage(‘Deploy’){
-          steps{
-            sh ‘make publish’
-            }
+    agent any
+    stages{
+      stage('source code from Github'){
+        steps{
+         echo "Source Code from Github"
         }
-     }
+      }
+      stage('Build'){
+        steps{
+         echo "Buil the project"
+        }
+      }
+      stage('Test'){
+        steps{
+          echo"Testing source code"
+        }
+      }
+      stage('Deploy'){
+        steps{
+          echo"Deploying ......"
+        }
+      }
+    }
 }
